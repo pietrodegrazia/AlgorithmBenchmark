@@ -11,6 +11,11 @@
 		5211971E1C976C8300860EF8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211971D1C976C8300860EF8 /* ViewController.swift */; };
 		521197201C976C8300860EF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5211971F1C976C8300860EF8 /* Assets.xcassets */; };
 		521197231C976C8300860EF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521197211C976C8300860EF8 /* Main.storyboard */; };
+		523A2FF81CA88CA500305C9A /* randomnumbers.bin in Resources */ = {isa = PBXBuildFile; fileRef = 523A2FF71CA88CA500305C9A /* randomnumbers.bin */; };
+		52BA71E01CA88FF700691A8A /* PDGFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA71DF1CA88FF700691A8A /* PDGFileHelper.swift */; };
+		52BA71E21CA8A74500691A8A /* PDGInsertionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA71E11CA8A74500691A8A /* PDGInsertionSort.swift */; };
+		52BA71E41CA8C29000691A8A /* PDGBenchmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA71E31CA8C29000691A8A /* PDGBenchmark.swift */; };
+		52BA71E61CA8CC9000691A8A /* PDGArrayBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA71E51CA8CC9000691A8A /* PDGArrayBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,11 @@
 		5211971F1C976C8300860EF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		521197221C976C8300860EF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		521197241C976C8300860EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		523A2FF71CA88CA500305C9A /* randomnumbers.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = randomnumbers.bin; sourceTree = "<group>"; };
+		52BA71DF1CA88FF700691A8A /* PDGFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDGFileHelper.swift; sourceTree = "<group>"; };
+		52BA71E11CA8A74500691A8A /* PDGInsertionSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDGInsertionSort.swift; sourceTree = "<group>"; };
+		52BA71E31CA8C29000691A8A /* PDGBenchmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDGBenchmark.swift; sourceTree = "<group>"; };
+		52BA71E51CA8CC9000691A8A /* PDGArrayBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDGArrayBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +62,16 @@
 		5211971A1C976C8300860EF8 /* LetNinjaSwift */ = {
 			isa = PBXGroup;
 			children = (
+				523A2FF71CA88CA500305C9A /* randomnumbers.bin */,
 				5211971B1C976C8300860EF8 /* AppDelegate.swift */,
 				5211971D1C976C8300860EF8 /* ViewController.swift */,
+				52BA71E31CA8C29000691A8A /* PDGBenchmark.swift */,
+				52BA71E51CA8CC9000691A8A /* PDGArrayBuilder.swift */,
+				52BA71DF1CA88FF700691A8A /* PDGFileHelper.swift */,
 				5211971F1C976C8300860EF8 /* Assets.xcassets */,
 				521197211C976C8300860EF8 /* Main.storyboard */,
 				521197241C976C8300860EF8 /* Info.plist */,
+				52BA71E11CA8A74500691A8A /* PDGInsertionSort.swift */,
 			);
 			path = LetNinjaSwift;
 			sourceTree = "<group>";
@@ -119,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				523A2FF81CA88CA500305C9A /* randomnumbers.bin in Resources */,
 				521197201C976C8300860EF8 /* Assets.xcassets in Resources */,
 				521197231C976C8300860EF8 /* Main.storyboard in Resources */,
 			);
@@ -132,7 +148,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5211971E1C976C8300860EF8 /* ViewController.swift in Sources */,
+				52BA71E01CA88FF700691A8A /* PDGFileHelper.swift in Sources */,
+				52BA71E41CA8C29000691A8A /* PDGBenchmark.swift in Sources */,
 				5211971C1C976C8300860EF8 /* AppDelegate.swift in Sources */,
+				52BA71E21CA8A74500691A8A /* PDGInsertionSort.swift in Sources */,
+				52BA71E61CA8CC9000691A8A /* PDGArrayBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +293,7 @@
 				521197291C976C8300860EF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
