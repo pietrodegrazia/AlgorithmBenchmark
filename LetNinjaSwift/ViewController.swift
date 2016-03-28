@@ -9,19 +9,12 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
+    
+    let destinationFileName = "resultados_00243666.txt"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        PDGBenchmark.$.runAllTests()
     }
-
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
-
 }
 
