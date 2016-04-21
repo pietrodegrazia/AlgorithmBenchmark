@@ -6,24 +6,34 @@
 //  Copyright © 2016 pietrodegrazia. All rights reserved.
 //
 
+//insertion sort
+
+//insertion sort with binary search
+//shellsort 
+//bubblesort
+//quicksort
+//mergesort
+//heapsort
+
 import Foundation
 
 protocol PDGAlgorithm {
-    func sort()
+    func sort(array: [PDGDataType]) -> PDGAlgorithmResult
 }
 
+typealias PDGDataType = Int32
+typealias PDGAlgorithmResult = (sortedArray: [PDGDataType], comparisons: Int, swaps: Int)
 typealias PDGBenchmarkConfig = (algorithm:PDGAlgorithm, size:Int, order:OrderTypes)
-
 
 //let Algorithms: [String] = ["insertionsort com busca linear", "insertionsort com busca binária", "shellsort", "bubblesort", "quicksort", "mergesort", "heapsort"]
 let Algorithms: [PDGAlgorithm] = [PDGInsertionSort()]
 let ArraySizes: [Int] = [1000, 10000, 100000, 1000000, 10000000]
 //let OrderTypes: [String] = ["ordenado", "inverso", "randomico"]
-enum OrderTypes: String {
-    case Ordenado = "ordenado"
-    case Inverso = "inverso"
-    case Randomico = "randomico"
-    static let allValues = [Ordenado, Inverso, Randomico]
+public enum OrderTypes: String {
+    case Increasing = "ordenado"
+    case Decreasing = "inverso"
+    case Random = "randomico"
+    static let allValues = [Increasing, Decreasing, Random]
 }
 
 class PDGBenchmark {
@@ -43,8 +53,16 @@ class PDGBenchmark {
     
     func runTestForConfig(config: PDGBenchmarkConfig) {
         let array = PDGArrayBuilder.arrayForConfig(config)
-        print(config)
-        print(array)
-        print("-------------------------------------------")
+//        let array = PDGArrayBuilder.dummyArray
+//        print(config)
+        let startTime = NSDate()
+        print("--------------START--------------")
+        let algorithmResult = config.algorithm.sort(array)
+        let duration = startTime.timeIntervalSinceNow
+        print("comparisons: \(algorithmResult.comparisons)")
+        print("swaps: \(algorithmResult.swaps)")
+        print("duration: \(duration*1000)")
+        print("--------------END--------------")
+//        print(sortedArray)
     }
 }

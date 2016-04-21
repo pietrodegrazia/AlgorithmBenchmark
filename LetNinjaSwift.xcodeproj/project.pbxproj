@@ -12,6 +12,8 @@
 		521197201C976C8300860EF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5211971F1C976C8300860EF8 /* Assets.xcassets */; };
 		521197231C976C8300860EF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521197211C976C8300860EF8 /* Main.storyboard */; };
 		523A2FF81CA88CA500305C9A /* randomnumbers.bin in Resources */ = {isa = PBXBuildFile; fileRef = 523A2FF71CA88CA500305C9A /* randomnumbers.bin */; };
+		526519961CADCE740004F426 /* PDGShellsort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526519951CADCE740004F426 /* PDGShellsort.swift */; };
+		526519981CADFB940004F426 /* PDGInsertionSortBinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526519971CADFB940004F426 /* PDGInsertionSortBinarySearch.swift */; };
 		52BA71E01CA88FF700691A8A /* PDGFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA71DF1CA88FF700691A8A /* PDGFileHelper.swift */; };
 		52BA71E21CA8A74500691A8A /* PDGInsertionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA71E11CA8A74500691A8A /* PDGInsertionSort.swift */; };
 		52BA71E41CA8C29000691A8A /* PDGBenchmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA71E31CA8C29000691A8A /* PDGBenchmark.swift */; };
@@ -26,6 +28,8 @@
 		521197221C976C8300860EF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		521197241C976C8300860EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		523A2FF71CA88CA500305C9A /* randomnumbers.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = randomnumbers.bin; sourceTree = "<group>"; };
+		526519951CADCE740004F426 /* PDGShellsort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDGShellsort.swift; sourceTree = "<group>"; };
+		526519971CADFB940004F426 /* PDGInsertionSortBinarySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDGInsertionSortBinarySearch.swift; sourceTree = "<group>"; };
 		52BA71DF1CA88FF700691A8A /* PDGFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDGFileHelper.swift; sourceTree = "<group>"; };
 		52BA71E11CA8A74500691A8A /* PDGInsertionSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDGInsertionSort.swift; sourceTree = "<group>"; };
 		52BA71E31CA8C29000691A8A /* PDGBenchmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDGBenchmark.swift; sourceTree = "<group>"; };
@@ -62,6 +66,7 @@
 		5211971A1C976C8300860EF8 /* LetNinjaSwift */ = {
 			isa = PBXGroup;
 			children = (
+				526519941CADCE330004F426 /* Algorithms */,
 				523A2FF71CA88CA500305C9A /* randomnumbers.bin */,
 				5211971B1C976C8300860EF8 /* AppDelegate.swift */,
 				5211971D1C976C8300860EF8 /* ViewController.swift */,
@@ -74,6 +79,15 @@
 				52BA71E11CA8A74500691A8A /* PDGInsertionSort.swift */,
 			);
 			path = LetNinjaSwift;
+			sourceTree = "<group>";
+		};
+		526519941CADCE330004F426 /* Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				526519951CADCE740004F426 /* PDGShellsort.swift */,
+				526519971CADFB940004F426 /* PDGInsertionSortBinarySearch.swift */,
+			);
+			path = Algorithms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,10 +162,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5211971E1C976C8300860EF8 /* ViewController.swift in Sources */,
+				526519961CADCE740004F426 /* PDGShellsort.swift in Sources */,
 				52BA71E01CA88FF700691A8A /* PDGFileHelper.swift in Sources */,
 				52BA71E41CA8C29000691A8A /* PDGBenchmark.swift in Sources */,
 				5211971C1C976C8300860EF8 /* AppDelegate.swift in Sources */,
 				52BA71E21CA8A74500691A8A /* PDGInsertionSort.swift in Sources */,
+				526519981CADFB940004F426 /* PDGInsertionSortBinarySearch.swift in Sources */,
 				52BA71E61CA8CC9000691A8A /* PDGArrayBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

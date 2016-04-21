@@ -14,7 +14,13 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        PDGBenchmark.$.runAllTests()
+//        PDGBenchmark.$.runAllTests()
+        
+        PDGFileHelper.$.loadRandomNumbers()
+        
+        let config = PDGBenchmarkConfig(PDGInsertionSort(), 10, OrderTypes.Decreasing)
+        PDGBenchmark.$.runTestForConfig(config)
+        
     }
 }
 

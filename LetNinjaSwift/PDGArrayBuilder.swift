@@ -10,23 +10,31 @@ import Foundation
 
 class PDGArrayBuilder {
     
-    static func arrayForConfig(config: PDGBenchmarkConfig) -> [Int32] {
-        var array = [Int32](count: config.size, repeatedValue: 0)
+    static var dummyArray: [PDGDataType] = [3, 5, 4, 7, 6, 2, 1, 0, -1]
+    
+    static func arrayForConfig(config: PDGBenchmarkConfig) -> [PDGDataType] {
+        var array = [PDGDataType](count: config.size, repeatedValue: 0)
         
         switch config.order {
-        case .Ordenado:
-            for (var i = 0; i < config.size; i++){
-                array[i] = Int32(i)
+        case .Increasing:
+            for i in 0 ..< config.size {
+                array[i] = PDGDataType(i)
             }
             break
-        case .Inverso:
+        case .Decreasing:
             var value = 0
-            for (var i = config.size-1; i >= 0; i--){
-                array[i] = Int32(value)
-                value++
+            
+            for i in (config.size - 1).stride(through: 0, by: -1) {
+                array[i] = PDGDataType(value)
+                value += 1
             }
+//            
+//            for (var i = config.size-1; i >= 0; i--){
+//            
+//            }
             break
-        default:break
+        case .Random:
+            array = PDGFileHelper.$.array(config.size)
         }
     return array
     }
