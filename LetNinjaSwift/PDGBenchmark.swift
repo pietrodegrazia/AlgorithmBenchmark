@@ -18,7 +18,7 @@
 import Foundation
 
 protocol PDGAlgorithm {
-    func sort(array: [PDGDataType]) -> PDGAlgorithmResult
+    func sort(inout array: [PDGDataType]) -> PDGAlgorithmResult
 }
 
 typealias PDGDataType = Int32
@@ -52,17 +52,27 @@ class PDGBenchmark {
     }
     
     func runTestForConfig(config: PDGBenchmarkConfig) {
-        let array = PDGArrayBuilder.arrayForConfig(config)
+        //Production
+        var array = PDGArrayBuilder.arrayForConfig(config)
+        
+        //Debug
 //        let array = PDGArrayBuilder.dummyArray
-//        print(config)
+        
         let startTime = NSDate()
         print("--------------START--------------")
-        let algorithmResult = config.algorithm.sort(array)
+        
+        //Production Code
+//        let algorithmResult = config.algorithm.sort(array)
+        
+        //Testing Code
+        let algorithmResult = PDGBubblesort().sort(&array)
+        
         let duration = startTime.timeIntervalSinceNow
         print("comparisons: \(algorithmResult.comparisons)")
         print("swaps: \(algorithmResult.swaps)")
         print("duration: \(duration*1000)")
         print("--------------END--------------")
+        print(algorithmResult.sortedArray)
 //        print(sortedArray)
     }
 }

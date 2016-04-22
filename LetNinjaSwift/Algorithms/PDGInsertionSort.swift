@@ -9,13 +9,11 @@
 import Foundation
 
 class PDGInsertionSort: PDGAlgorithm {
-    func sort(arrayToBeSorted: [Int32]) -> PDGAlgorithmResult {
+    func sort(inout array: [Int32]) -> PDGAlgorithmResult {
         var comparisons = 1
         var swaps = 0
-        let arraySize = arrayToBeSorted.count
-        guard arraySize > 1 else {return PDGAlgorithmResult(arrayToBeSorted, comparisons, swaps)}
-        
-        var array = arrayToBeSorted
+        let arraySize = array.count
+        guard arraySize > 1 else {return PDGAlgorithmResult(array, comparisons, swaps)}
         
         for lastSortedIndex in 0 ..< arraySize-1 {
             var currentSearchIndex = lastSortedIndex + 1

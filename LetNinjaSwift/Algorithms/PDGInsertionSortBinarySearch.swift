@@ -9,43 +9,38 @@
 import Foundation
 
 class PDGInsertionSortBinarySearch: PDGAlgorithm {
-    func sort(arrayToBeSorted: [PDGDataType]) -> PDGAlgorithmResult {
+    
+    func sort(inout array: [PDGDataType]) -> PDGAlgorithmResult {
         var comparisons = 1
         var swaps = 0
-        let arraySize = arrayToBeSorted.count
-        guard arraySize > 1 else {return PDGAlgorithmResult(arrayToBeSorted, comparisons, swaps)}
-        
-        var array = arrayToBeSorted
-        var lastSortedIndex = 0
+        let arraySize = array.count
+        guard arraySize > 1 else {return PDGAlgorithmResult(array, comparisons, swaps)}
         
         for lastSortedIndex in 0 ..< (arraySize-1) {
-            var currentSearchIndex = lastSortedIndex + 1
-            let currentElement = array[currentSearchIndex]
-            print("element: \(currentElement)")
-            while (currentSearchIndex > 0) {
-                print(array)
-                comparisons += 1
-                if (currentElement > array[currentSearchIndex-1]) {
-                    print("newIndex: \(currentSearchIndex)")
-                    break
-                } else {
-                    swaps += 1
-                    swap(&array[currentSearchIndex], &array[currentSearchIndex-1])
-                }
-                currentSearchIndex -= 1
+            var currentElementIndex = lastSortedIndex + 1
+            let insertionIndex = findInsertionIndex(forKeyAt: currentElementIndex, array: array, rangingFrom: 0, to: currentElementIndex)
+            
+            for index in currentElementIndex.stride(to: insertionIndex, by: -1) {
+                swap( &array[index], &array[index-1] )
             }
         }
+    
         return PDGAlgorithmResult(array, comparisons, swaps)
     }
     
-    func determineInsertPosition(keyAt index: Int, array: [PDGDataType]) -> Int {
-        var insertAtIndex = 0
+    func findInsertionIndex(forKeyAt index: Int, array: [PDGDataType], rangingFrom min: Int, to max: Int) -> Int {
+        if min == max {
+            return min
+        }
         
+        let currentSearchIndex = min + ((max - min)/2)
         
-        
-        return insertAtIndex
+        if array[index] > array[currentSearchIndex] {
+            return findInsertionIndex(forKeyAt: index, array: array, rangingFrom: currentSearchIndex+1, to: max)
+        } else if array[index] < array[currentSearchIndex] {
+            return findInsertionIndex(forKeyAt: index, array: array, rangingFrom: min, to: currentSearchIndex)
+        } else {
+            return currentSearchIndex
+        }
     }
 }
-// 1 2 4 5 6 3
-
-// 3 6 2 5 8 9 7 1
